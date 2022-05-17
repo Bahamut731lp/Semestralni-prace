@@ -1,0 +1,84 @@
+\documentclass[FM]{tulthesis}
+% tento dokument používá balíky specifické pro XeLaTeX a lze jej přeložit
+% jen XeLaTeXem, nemáte-li instalována použitá (komerční) písma, změňte
+% nebo vymažte příkazy \set...font na následujících řádcích
+
+\newcommand{\verze}{1.10}
+
+\usepackage{polyglossia}
+\usepackage{longtable}
+\usepackage[toc,page]{appendix}
+\usepackage{hyperref}	
+\setdefaultlanguage{czech}
+\usepackage{xevlna}
+
+
+\usepackage{makeidx}
+\makeindex
+
+% appending
+\appendixpageoff
+%\appendixtitleoff
+
+% fonty
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem}
+%\setmainfont[Mapping=tex-text,BoldFont={* Bold},Numbers=OldStyle]{Baskerville 10 Pro}
+%\setsansfont[Mapping=tex-text,BoldFont={* Bold},Numbers=OldStyle]{Myriad Pro}
+%\setmonofont[Scale=MatchLowercase]{Vida Mono 32 Pro}
+
+% příkazy specifické pro tento dokument
+\graphicspath{ {./images/} }
+\newcommand\litem[1]{\item{\bfseries #1 -}}
+\newcommand{\argument}[1]{{\ttfamily\color{\tulcolor}#1}}
+\newcommand{\argumentindex}[1]{\argument{#1}\index{#1}}
+\newcommand{\prostredi}[1]{\argumentindex{#1}}
+\newcommand{\prikazneindex}[1]{\argument{\textbackslash #1}}
+\newcommand{\prikaz}[1]{\prikazneindex{#1}\index{#1@\textbackslash #1}}
+\newenvironment{myquote}{\begin{list}{}{\setlength\leftmargin\parindent}\item[]}{\end{list}}
+\newenvironment{listing}{\begin{myquote}\color{\tulcolor}}{\end{myquote}}
+\sloppy
+
+% \textbf{ pro titulní stránku
+\TULtitle{Java pro ztracené případy}{Java for lost causes}
+\TULprogramme{B0613A140005}{Informační technologie}{Information technology}
+\TULbranch{B0613A140005IT}{Informační technologie}{Information technology}
+\TULauthor{Kevin Daněk}
+\TULsupervisor{ - }
+\TULyear{2022}
+\TULthesisType{Semestrální práce}{Semestral work}
+
+\begin{document}
+
+	
+	\ThesisStart{male}
+	%\ThesisStart{zadani-a-prohlaseni.pdf}
+	\include{./kapitoly/abstrakt}
+	\clearpage
+
+	\tableofcontents	
+	\listoffigures
+	\listoftables
+	
+	\include{./kapitoly/uvod}
+	\include{./kapitoly/kapitola1}
+	\include{./kapitoly/kapitola2}
+	\include{./kapitoly/zaver}
+	
+	\addcontentsline{toc}{chapter}{Seznam literatury}
+	\begin{thebibliography}{9}
+		\bibitem{finek}FINĚK, Václav. \emph{Matematika 1 a 2} [online]. Liberec, 2022 \mbox{[cit. 2022-04-12]}. Dostupné na WWW: \url{https://kmd.fp.tul.cz/images/stories/vyuka/finek-matematika1/Matematika_11.pdf}
+		\bibitem{kralovcova}KRÁLOVCOVÁ, Jiřina. \emph{Materiály k přednášce Algoritmizace a programování 2} [online]. Liberec, 2022 \mbox{[cit. 2022-05-16]}.
+	\end{thebibliography}
+
+	\renewcommand{\appendixtocname}{Přílohy}
+	\begin{appendices}
+		\input{./kapitoly/rejstrik}
+	\end{appendices}
+
+\end{document}

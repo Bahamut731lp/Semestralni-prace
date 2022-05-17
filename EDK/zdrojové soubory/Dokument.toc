@@ -1,0 +1,28 @@
+\selectlanguage *{czech}
+\contentsline {chapter}{\numberline {1}Úvod}{8}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Úvod do programování a algoritmizace}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Programování a algoritmizace}{9}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Asymptotická složitost algoritmů}{10}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Datové typy}{12}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Programovací paradigma}{13}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Strukturované programování}{14}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Datové struktury}{14}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Výjimky a chybové stavy}{15}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Úvod do objektového programování}{16}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Objekty}{16}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Atributy}{16}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Metody}{17}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Vytváření objektů a přístup k objektům}{17}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Třída objektu}{17}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Konstruktor a destruktor}{17}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Modifikátory přístupu}{18}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Interakce mezi objekty}{18}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Abstrakce a zapouzdření}{18}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Skládání objektů}{19}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Statická deklarace}{19}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Dědičnost}{19}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Polymorfismus}{20}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Závěr}{21}{chapter.4}%
+\contentsline {chapter}{Seznam literatury}{22}{chapter.4}%
+\contentsline {chapter}{Přílohy}{23}{section*.5}%
+\contentsline {chapter}{\numberline {A}Slovník pojmů}{23}{appendix.1.A}%

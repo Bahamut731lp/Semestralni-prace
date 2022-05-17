@@ -1,0 +1,96 @@
+\chapter{Úvod do objektového programování}
+Objektově orientované programování (dále už jenom OOP) je jedno z nejrozšířenějších programovacích paradigmat. Nachází velké rozšíření napříč programovacími jazyky a je de-facto jedním z nejpoužívanějších paradigmat. Jeho výhodou je rozhodně jednoduchost návrhu řešení problému - OOP se totiž snaží simulovat reálný svět tím, že problém popíše pomocí různých entit, které mezi sebou navzájem interagují a dohromady řeší problém. Je to velmi podobné například manufaktuře, kde každý pracovník dělá jenom konkrétní činnost, jejíž výsledek poté předává dál - a na konci pak čeká již hotový výrobek.
+
+Ačkoliv je OOP velmi jednoduchý na pochopení, tak je také velmi jednoduchý na pokažení. OOP se dokáže velmi zvrtnout, velmi rychle. Jsou také případy, kdy OOP nepřináší žádnou výhodu a jiné paradigma by možná bylo užitečnější - to už pak záleží na zdrojích, které nám poskytuje konkrétní programovací jazyk.
+
+Nenechte se tímto odradit, jenom jsem chtěl upozornit na to, že OOP není blbuvzdorné a může vám v případě špatného použití spíše zavařit než-li pomoci.
+
+\section{Objekty}
+Základním stavebním blokem objektově orientovaného programování je, jak už název napovídá, \textbf{objekt}. Jako objekt se v objektově orientovaném programování označuje ledacos, a je to pojem spíše nápomocný k vysvětlování dalších pojmů. My budeme chápat jako objekt strukturu, která si uchovává dvě podstatné věci:
+
+\begin{itemize}
+	\item \textbf{Data} - Informace a hodnoty, se kterými může objekt nějak pracovat
+	\item a \textbf{Operace} - Věci, které dokáže provést
+\end{itemize}
+
+Data a operace nejsou ovšem není zrovna správné pojmenování těchto věcí - častěji se setkáte s jejich odbornými termíny, což jsou \textbf{atributy} (data) a \textbf{metody} (operace). Každý z tento pojmů postupně probereme.
+
+\subsection{Atributy}
+Jako atributy označujeme proměnné nebo konstanty, ve kterých si objekt uchovává informace a hodnoty, které dále ve svém kódu využívá. Tyto atributy jsou nejčastěji používány buďto pro sdílení informací napříč jednotlivými metodami, nebo pro nastavování nějakého obecnějšího chování.
+
+Představme si například objekt \textbf{obdélník}. Každý obdélník má \textbf{délku} a \textbf{šířku}. Délka a šířka jsou tedy atributy objektu obdélník. Tyto atributy můžeme dále používat pro výpočet obvodu, obsahu či úhlopříček...
+
+\subsection{Metody}
+Metody jsou operace, které může nějaký konkrétní objekt provádět. Jedná se konkrétně buďto o funkce nebo procedury, které má objekt k dispozici.
+
+Metody jsou hnacím motorem daného objektu - slouží k dělání výpočtů, manipulaci s dalšími objekty, vytváření dalších objektů, zkrátka objektu dají nějakou funkcionalitu.
+
+\section{Vytváření objektů a přístup k objektům}
+Zatím jsme si popsali objekt jako takový, ale neřekli jsme, odkud se objekty berou. Aby programovací jazyk věděl, jakým způsobem má nějaký objekt vytvořit, potřebuje pro něj nějaký \textbf{předpis}. Tomuto předpisu se říká \textbf{třída}.
+
+\subsection{Třída objektu}
+Třída objektu předepisuje, jaké vlastnosti a metody bude daný objekt mít. Vzpomeňte si na naší definici objektu - je to věc, která si uchovává v paměti atributy a metody. Třída nedělá nic jiného, než že říká, co tyhle vlastnosti a metody jsou konkrétně zač.
+
+S předpisem v ruce může programovací jazyk začít tvořit objekty - kde má ale začít? K tomu lze využít buďto již zabudovanou, nebo námi vytvořenou speciální metodu, které se říká \textbf{konstruktor}.
+
+\subsection{Konstruktor a destruktor}
+Konstruktor je metoda, kterou má každá třída, a která říká programovacímu jazyku, jak má vytvářet nové objekty. Každá třída má svůj tzv. \textit{implicitní konstruktor} - to je takový, který se použije, pokud tam nemáme svůj vlastní (respektive nazvaný \textit{explicitní konstruktor}).
+
+Konstruktory se používají k naplnění objektu daty, které můžeme pomocí argumentů předat z vnějšího programu. Vždy je výsledkem konstruktoru nová instance objektu - zpravidla lze vytváření objektu pomocí konstruktory přerušit akorát vyvoláním výjimky. Existují principy, jak vytvářet objekty a případně zamezit jejich vytvoření, ale to je mimo rozsah této příručky. Analogicky k metodě, která vytváří objekt, také existuje metoda, která objekt níčí (Odborníci čtěte jako \textit{uvolňuje z paměti}). Té se říká \textbf{destruktor}.
+
+\subsection{Modifikátory přístupu}
+Jak už název napovídá, modifikátory přístupu \textit{modifikují přístup} - otázkou je, přístup k čemu modifikují? Odpovědí je tak nějak ke všemu.
+
+Tahle definice se může zdát trochu vágní - vysvětlím tedy na příkladech. Nejdříve ale konkrétní modifikátory přístupu - nejčastěji se setkáte s dvojicí \textbf{public} a \textbf{private}. \textbf{Public} strukturu prezentuje celému zbytku programu, kde jakákoliv další struktura k němu má přístup, naopak \textbf{private} strukturu schová.
+
+\textit{Poznámka: Pod pojmem "struktura" si zde představte například třídu, atribut či metodu. Všechny tyto zpravidla bývají modifikovatelné z hlediska přístupu.}
+
+Příkladem budiž privátní metoda nějaké třídy - takovou metodu nelze zavolat z vnějšku, ale lze ji používat akorát v dané třídě. Privátní třídy také existují, ale to je trochu absurdní a málo používaná modifikace přístupu.
+
+\section{Interakce mezi objekty}
+Již jsme si pověděli něco o objektech a odkud se berou - pojďme se nyní podívat, jak můžeme používat více druhů objektů k vytvoření našeho programu. Nejdříve si vysvětlíme dva pojmy, se kterými se v lekcích OOP setkáte.
+
+\subsection{Abstrakce a zapouzdření}
+Za tuhle definici by mě "kolegové" zabili, ale říká v podstatě hlavní myšlenku vytváření abstrakcí - a to je zjednodušování (či zobecňování) našeho programování. V OOP to znamená, že vytváříme prostředky, jejíž operace poté dohromady používáme k vytvoření složitého algoritmu pomocí "jednoduchých" příkazů.
+
+Do jaké míry jsme proces zjednodušili označujeme jako \textbf{úroveň abstrakce}. S tímto termínem se často setkáte v povídání o programovacích jazycích, protože jsou jazyky s 
+
+\begin{enumerate}
+	\item \textbf{nízkou úrovní abstrakce}, které jsou pro lidi nečitelné, ale nevyžadují složitý překlad pro počítač
+	\item nebo \textbf{vysokou úrovní abstrakce}, které jsou blíže lidskému jazyku, ale vyžadují složitější překlad/interpretaci. 
+\end{enumerate}
+
+S abstrakcí úzce souvisí následující pojem, a to je \textbf{zapouzdření}. Jak již víme, abstrakce je proces zjednodušování složitých operací. Stejně jako v reálném světě platí, že jednoduchost je v nepřímé úměrnosti s počtem možností - čím méně toho víme, tím se to jeví jednodušší\footnote{Této heuristice se říká Hickův zákon}, a v programování se můžeme setkat s podobnou paralelou - je lepší, když máme jeden konkrétní způsob, jak něco udělat, než 5 různých, lehce odlišných způsobů.
+
+Zapouzdřením uděláme kolem našeho objektu "pouzdro", které schová vnitřnosti objektu a nechá odhalené akorát to, co chceme, aby používaly věci z vnějšího programu. Často se to místo pouzdra přirovnává k "černé skřínce", do které nevidíme, ale víme, co dělá.
+
+Můžeme tedy říct, že zapouzdření kontroluje tzv. "vstupní body", kterými dovolíme vnějšímu programu komunikovat s naším objektem. Nejčastěji se tohle používá k zamezení nebezpečnému manipulování s pomocnými proměnnými nebo konfiguračními atributy.
+
+\subsection{Skládání objektů}
+Pojďme trochu provázat naše objekty - tomu vysocí páni (a paní) říkají \textbf{skládání\footnote{Pojem \textit{skládání} vychází z matematiky, konkrétně ze složených funkcí.} objektů}. Není to nic jiného než využívání metod cizího objektu v metodách objektu.
+
+\section{Statická deklarace}
+Zatím vše, co jsme si ukázali, tak se nějak či onak vázalo na \textit{objekt}, respektive \textit{instanci třídy}, co kdybychom ale chtěli vytvořit konstantu, kterou půjde využít napříč všemi instancemi třídy? Naivní cesta by byla manuální přiřazení v konstruktoru, ovšem OOP jazyky disponují nástrojem, kterému se říká \textit{statická deklarace}.
+
+Teď teda co to konkrétně znamená - představme si \textit{obdélník}. Jak velký obdélník jste si představili? Kolik si jich můžeme představit? Obdélníků je nekonečně mnoho, protože vždy dokážeme vytvořit nový s jinými rozměry (vnitřním stavem). Každý obdélník má ale jednu věc stejnou, a to je způsob, kterým vypočteme jeho obsah. Výpočet obsahu bychom tedy mohli nazvat \textit{statickou metodou třídy obdélník}.
+
+\section{Dědičnost}
+Dědičnost je principem, který v jistém slova smyslu rozšiřuje pojem \textit{skládání objektů} až na úroveň tříd. Představme si, že máme třídu, a potřebujeme ještě jednu, která je v podstatě stejná, akorát se liší v implementaci jedné metody. Trochu blbý způsob by byl třídu zkopírovat. Mnohem lepší by bylo novou třídu \textit{odvodit} a následně \textit{překrýt} (přepsat implementaci) metodu.
+
+\textit{Odvozené třídy} mají všechny atributy a metody z třídy, ze které dědí. Rozdíl je v tom, že odvozená třída má možnost původní metody překrýt, což znamená přepsat vlastním kódem.
+
+Dědičnost se často používá ve spojení s abstrakcí k vytvoření takzvané \textit{hiearchie tříd} - než abych chodil kolem horké kaše, ukažme si takovou \textit{hiearchii} na příkladu.
+
+Uvažujme o lidech - (většinou) každý člověk umí chodit, psát, mluvit, a do jisté míry i počítat. Né každý ale umí naprogramovat bankovní systém. Všichni lidé mají nějaké základní vlastnosti, ale jenom menší hrst má ještě navíc nějaké další konkrétní vlastnosti. Než abychom museli pro programátora, popeláře, studenta či politika zvlášť implementovat to, že umí mluvit, tak tyto společné vlastnosti přesuneme do vyšší třídy - třídy člověk, ze které odvodíme jednotlivá povolání. 
+
+\section{Polymorfismus}
+Polymorfismus je Achillova pata testů z teorie OOP, přičemž to není vůbec složitý koncept - jenom jméno je zbytečně složité. Pojďme si tohle slovo rozebrat:
+\begin{itemize}
+	\item Předpona \textbf{poly} znamená \textit{více} nebo \textit{mnoho}.
+	\item Kořen \textbf{morf} znamená \textit{tvar} - vzpomeňte si třeba na seriál \textit{Ben 10} nebo podobné: když někdo \textit{morfuje}, tak zpravidla mění tvar.
+	\item Koncovka \textbf{-ismus} zpravidla označuje nějakou vlastnost
+\end{itemize}
+
+Tahle interpretace by nám pověděla, že \textbf{polymorfismus} bychom mohli nahradit spojením slov \textbf{mnoho, tvar a vlastnost}, jinak řečeno, \textbf{mnohotvárnost}.
+
+Opět né úplně přesná definice, ale v podstatě říká, že objekt by neměl být nutně vázaný na jeden typ dat, pokud to není nezbytně nutné. Takový objekt \textit{nůž} by neměl umět krájet akorát \textit{jablka}, ale i \textit{hrušky} nebo \textit{chleba}.
